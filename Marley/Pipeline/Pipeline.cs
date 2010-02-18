@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Marley.Contributors.Codecs;
@@ -18,7 +19,19 @@ namespace Marley.Pipeline
 
         public void Execute(IApiContext context)
         {
-            Contributors.ForEach(c => c.Execute(context));
+            foreach (var contributor in Contributors)
+            {
+                try
+                {
+                    if(contributor.Execute(context) == PipelineContinuation.Abort)
+                        break;
+                }
+                catch (Exception ex)
+                {
+                    context.PipelineException = ex;
+                    break;
+                }
+            }
         }
     }
 }

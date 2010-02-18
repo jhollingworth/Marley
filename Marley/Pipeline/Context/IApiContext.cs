@@ -4,7 +4,6 @@ namespace Marley.Pipeline.Context
 {
     public interface IApiContext
     {
-        string ContentType { get; set; }
         string Accept { get; set; }
         bool UseFiddler { get; set; }
         IRequest Request { get; set; }

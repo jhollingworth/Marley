@@ -25,7 +25,6 @@ namespace Marley.Contributors
 
             var request = WebRequest.Create(context.Request.Uri);
 
-            request.ContentType = context.ContentType;
             request.Timeout = context.Request.Timeout;
             request.Method = context.Request.HttpMethod;
 
@@ -37,10 +36,6 @@ namespace Marley.Contributors
             {
                 _log.InfoFormat("Setting proxy to enable Fiddle");
                 request.Proxy = new WebProxy("127.0.0.1", 8888);
-            }
-            else
-            {
-                request.Proxy = null;
             }
 
             context.Request.Request = request;

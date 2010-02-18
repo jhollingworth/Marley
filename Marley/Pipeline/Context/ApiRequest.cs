@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net;
 
@@ -7,6 +8,7 @@ namespace Marley.Pipeline.Context
     {
         #region IRequest Members
 
+        public string ContentType { get; set; }
         public string HttpMethod { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }

@@ -5,6 +5,7 @@ namespace Marley.Pipeline.Context
 {
     public interface IRequest
     {
+        string ContentType { get; set; }
         string HttpMethod { get; set; }
         string Username { get; set; }
         string Password { get; set; }

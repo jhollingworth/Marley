@@ -4,8 +4,8 @@ namespace Marley
 {
     public interface IApiCall
     {
-        IResponse Get(string uri);
-        IResponse Post(string uri, string data);
-        IResponse Execute(string uri, string data, object method);
+        IResponse Get<T>(string uri);
+        IResponse Post<T>(string uri, object data);
+        IResponse Execute<T>(string uri, object data, object method);
     }
 }

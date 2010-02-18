@@ -4,6 +4,16 @@ namespace Marley.Pipeline.Context
 {
     public class ApiContext : IApiContext
     {
+        public ApiContext()
+        {
+        }
+
+        public ApiContext(IRequest request, IResponse response)
+        {
+            Request = request;
+            Response = response;
+        }
+
         public string ContentType { get; set; }
         public string Accept { get; set; }
         public bool UseFiddler { get; set; }

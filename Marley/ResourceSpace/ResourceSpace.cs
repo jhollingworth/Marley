@@ -19,14 +19,14 @@ namespace Marley.ResourceSpace
 
         private IApiCall ApiCall
         {
-            get { return new ApiCall(_pipeline); }
+            get { return new ApiCall(_pipeline, _resourceSpaceConfiguration); }
         }
 
         #region IResourceSpace Members
 
         public TResource Get<TResource>(object id)
         {
-            var response = ApiCall.Get(ConstructUri<TResource>(id));
+            var response = ApiCall.Get<TResource>(ConstructUri<TResource>(id));
 
             return GetCodec<TResource>().Decode<TResource>(response.Data);
         }
@@ -51,7 +51,7 @@ namespace Marley.ResourceSpace
 
         private TResponseResource Decode<TRequestResource, TResponseResource>(TRequestResource resource, object method)
         {
-            var response = ApiCall.Execute(
+            var response = ApiCall.Execute<TResponseResource>(
                 ConstructUri(resource, method),
                 Encode(resource),
                 method

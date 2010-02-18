@@ -4,7 +4,7 @@ namespace Marley.Pipeline.Context
 {
     public interface IResponse
     {
-        WebResponse Response { get; set; }
+        HttpWebResponse Response { get; set; }
         string Data { get; set; }
     }
 }
