@@ -1,0 +1,8 @@
+D:\dev\personal\Cuba\Cuba\obj\Debug\ResolveAssemblyReference.cache
+D:\dev\personal\Cuba\Cuba\bin\Debug\Cuba.dll
+D:\dev\personal\Cuba\Cuba\bin\Debug\Cuba.pdb
+D:\dev\personal\Cuba\Cuba\bin\Debug\log4net.dll
+D:\dev\personal\Cuba\Cuba\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\dev\personal\Cuba\Cuba\obj\Debug\Cuba.dll
+D:\dev\personal\Cuba\Cuba\obj\Debug\Cuba.pdb
+D:\dev\personal\Cuba\Cuba\bin\Debug\Jayrock.Json.dll

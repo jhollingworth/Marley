@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21BEB564-301E-41AA-A5C1-E6B2AD69F8E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Marley</RootNamespace>
+    <AssemblyName>Marley</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jayrock.Json, Version=0.9.10905.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Jayrock.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiCall.cs" />
+    <Compile Include="Contributors\Codecs\DataContractCodec.cs" />
+    <Compile Include="Contributors\Codecs\ICodec.cs" />
+    <Compile Include="Contributors\Codecs\JsonCodec.cs" />
+    <Compile Include="Contributors\Codecs\StringWriterWithEncoding.cs" />
+    <Compile Include="Contributors\Codecs\UnknownCodecException.cs" />
+    <Compile Include="Contributors\Codecs\XmlCodec.cs" />
+    <Compile Include="Pipeline\Configuration\DefaultUriBuilder.cs" />
+    <Compile Include="Pipeline\Configuration\IRequiresResourceSpaceConfiguration.cs" />
+    <Compile Include="Contributors\RequestAuthBuilderContributor.cs" />
+    <Compile Include="Contributors\RequestBuilderContributor.cs" />
+    <Compile Include="Contributors\RequestExecutorContributor.cs" />
+    <Compile Include="HttpMethod.cs" />
+    <Compile Include="IApiCall.cs" />
+    <Compile Include="Pipeline\Configuration\IResourceConfiguration.cs" />
+    <Compile Include="Pipeline\Configuration\IResourceSpaceConfiguration.cs" />
+    <Compile Include="Pipeline\Configuration\IUriBuilder.cs" />
+    <Compile Include="Pipeline\Configuration\ResourceConfiguration.cs" />
+    <Compile Include="Pipeline\Configuration\ResourceSpaceConfiguration.cs" />
+    <Compile Include="Pipeline\IPipeline.cs" />
+    <Compile Include="ResourceSpace\IResourceSpace.cs" />
+    <Compile Include="ResourceSpace\IResourceSpaceFactory.cs" />
+    <Compile Include="ResourceSpace\ResourceSpace.cs" />
+    <Compile Include="Pipeline\Configuration\ConflictingMetadataException.cs" />
+    <Compile Include="Pipeline\Configuration\PipelineConfiguration.cs" />
+    <Compile Include="Pipeline\Context\IApiContext.cs" />
+    <Compile Include="Pipeline\Context\InvalidContextException.cs" />
+    <Compile Include="Pipeline\Context\IRequest.cs" />
+    <Compile Include="Pipeline\Context\IResponse.cs" />
+    <Compile Include="Pipeline\OrderedContributorList.cs" />
+    <Compile Include="Pipeline\Configuration\IPipelineConfiguration.cs" />
+    <Compile Include="Pipeline\PipelineContinuation.cs" />
+    <Compile Include="Pipeline\RegistrationMetadata.cs" />
+    <Compile Include="Pipeline\Context\ApiRequest.cs" />
+    <Compile Include="Pipeline\Context\ApiResponse.cs" />
+    <Compile Include="Pipeline\IPipelineContributor.cs" />
+    <Compile Include="Pipeline\Pipeline.cs" />
+    <Compile Include="ResourceSpace\ResourceSpaceFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pipeline\Context\ApiContext.cs" />
+    <Compile Include="Pipeline\Configuration\IConfiguration.cs" />
+    <Compile Include="Pipeline\Configuration\DefaultConfiguration.cs" />
+    <Compile Include="Pipeline\PipelineContributorSorter.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
